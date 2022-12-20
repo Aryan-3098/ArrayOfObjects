@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Objects</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Array of Objects</h1>
+    <p style="text-align:right ;">Note:check console for results</p>
+    <p>
+        "let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+          {name: 'Baba', id: 101, marks : 23 },
+          {name: 'yaga', id: 200, marks : 45 },
+          {name: 'Wick', id: 115, marks : 75 } ] "
+    </p>
+    <pre>
+Question 1 : We are interested in retrieving only the name of the students and all the names should be in caps.
+            ['JOHN', 'BABA', 'YAGA', 'WICK']
+        
+Answer: var n=studentRecords.map((item)=>item.name.toUpperCase());<br>
+        console.log(n);
+    </pre>
+    <pre>
+Question 2: Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+
+[{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75 }]
+
+Answer:var x=studentRecords.filter((item=>item.marks>50))
+        console.log(x);
+    </pre>
+    <pre>
+Question 3: Retrieve the details of students who scored more than 50 marks and have id greater than 120.
+
+Answer: var y=studentRecords.filter((item=>item.marks>50 && item.id>120))
+        console.log(y);
+    </pre>
+    <pre>
+Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.
+
+Answer: var z=studentRecords.map((item)=>item.marks)
+        var z1=z.reduce((x,y)=>x+y,0)
+        console.log(z1);
+    </pre>
+    <pre>
+Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.
+
+Answer: var w=studentRecords.filter((item=>item.marks>50))
+        var w1=w.map((item)=>item.name)
+        console.log(w1);
+    </pre>
+    <pre>
+ Question 6: This time we are required to print the sum of marks of the students with id > 120.
+
+ Answer:var v=studentRecords.filter((item)=>item.id>120)
+        var v1=v.map((item)=>item.marks)
+        var v2=v1.reduce((x,y)=>x+y,0)
+        console.log(v2);
+    </pre>
+    <pre>
+Question 7: This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.
+
+Answer: var u=studentRecords.filter((item)=>item.marks>50)
+        var u1=u.map((item)=>item.marks)
+        var u2=u1.reduce((x,y)=>x+y,0)
+        console.log(u2);
+    </pre>
+    <script src="./main.js"></script>
+</body>
+</html>
